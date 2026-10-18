@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E1130145_V2.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+
+            <!--Encabezado de la página-->
+            <Label Text="Calculadora de Envios"
+                   BackgroundColor="BlueViolet"
+                   TextColor="White"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   Padding="10" />
+
+            <!--Título para la descripción del paquete-->
+            <Label Text="Descripcion del paquete"
+                   FontSize="16"
+                   Padding="10" />
+
+
+            <!--Entrada para la descripción del paquete-->
+           
+                <Entry x:Name="txtDescripcion"
+                 Placeholder="Documentos o Paquete Ejemplo"
+                 FontSize="16" />
+                
+
+
+            <!--Título para el peso del paquete-->
+
+            <Label Text="Peso del paquete (Kg)"
+			 FontSize="16"
+			 Padding="10" />
+
+
+            <!--Entrada para el peso del paquete-->
+
+            <Entry x:Name="txtPeso"
+                   Placeholder="Ingrese el peso del paquete ejemplo 2.5"
+                   FontSize="16" />
+
+            <!--Título para la zona de destino-->
+            <Label Text="Zona de Destino"
+                   FontSize="16"
+                   Padding="10" />
+
+
+            <!--Selector para la zona de destino-->
+            <Picker x:Name="pckZona">
+                <Picker.Items>
+                    <x:String>Zona Local</x:String>
+                    <x:String>Zona Nacional</x:String>
+                    <x:String>Zona Internacional</x:String>
+                </Picker.Items>
+            </Picker>
+
+
+            <!--Checkbox para el servicio express-->
+            <CheckBox x:Name="chkExpress"/>
+            <Label Text="Servicio Express(+ L 100.00)"/>
+
+
+            <!--Botón para calcular el costo-->
+            <Button x:Name="btnCalcular" Text="Calcular Costo" Clicked="BtnCalcular_Clicked" />
+
+            <Border Stroke="Black"
+                    x:Name="contenedor"
+                StrokeThickness="1"
+                BackgroundColor="LightGray"
+                Padding="10" IsVisible="False">
+             
+                <Label x:Name="lblResultado"
+					   FontSize="24"
+					   FontAttributes="Bold"
+					   Padding="10" />
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
